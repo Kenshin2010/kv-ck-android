@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">KvService</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_invest">Danh mục đầu tư</string>
+    <string name="sigin_in">Đăng nhập</string>
+    <string name="log_in">Đăng ký</string>
+    <string name="setting">Cấu hình</string>
+    <string name="market">Thị trường</string>
+    <string name="list_price">Bảng giá</string>
+    <string name="details_price">Xem chi tiết bảng giá</string>
+    <string name="siginal_sell_buy">Tín hiệu mua bán</string>
+    <string name="news">Tin tức</string>
+    <string name="vn_index">VN-INDEX</string>
+    <string name="vn30_index">VN30-INDEX</string>
+    <string name="hnx_index">HNX-INDEX</string>
+    <string name="codeck">MãCK</string>
+    <string name="price">Giá</string>
+    <string name="add_minus">+/-</string>
+    <string name="kl">KL</string>
+    <string name="sumkl">TổngKL</string>
+    <string name="hhs">hhs</string>
+    <string name="ogc">OGC</string>
+    <string name="hkb">HKB</string>
+    <string name="nhp">NHP</string>
+    <string name="tc">TC</string>
+    <string name="bare">Trần</string>
+    <string name="floor">Sàn</string>
+    <string name="high">Cao</string>
+    <string name="low">Thấp</string>
+    <string name="tkl">TKL</string>
+    <string name="present">Hiện tại</string>
+    <string name="history">Lịch sử</string>
+    <string name="buy">Mua</string>
+    <string name="sell">Bán</string>
+    <string name="tg">TG</string>
+    <string name="enter_code"><b>Nhập mã chuyển khoản</b></string>
+</resources>
