@@ -41,4 +41,5 @@
     <string name="sell">Bán</string>
     <string name="tg">TG</string>
     <string name="enter_code"><b>Nhập mã chuyển khoản</b></string>
+    <string name="kl_buy">KL MUA</string>
 </resources>

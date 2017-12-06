@@ -14,6 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.adapter.ViewPagerAdapter;
@@ -24,6 +29,7 @@ public class MainActivity extends AppCompatActivity
     private ViewPagerAdapter adapterWrapper;
     private TabLayout tabLayout;
     private ViewPager pager;
+
 
     private int[] tabIcons = {
             R.mipmap.ic_launcher_round,
@@ -39,7 +45,6 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
