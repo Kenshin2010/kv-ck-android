@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context="vn.manroid.kvservice.view.fragment.ChartFragment">
+    tools:context="vn.manroid.kvservice.view.fragment.chart.ChartFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -209,7 +209,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/ogc"
-                        android:textColor="#09ef09"
+                        android:textColor="#e00a0a"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -222,7 +222,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hkb"
-                        android:textColor="#e00a0a"
+                        android:textColor="#09ef09"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -768,6 +768,7 @@
                     android:numColumns="6" />
 
                 <LinearLayout
+                    android:id="@+id/change_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/grd_content"
@@ -775,22 +776,33 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/btn_news"
                         android:layout_width="64dp"
                         android:layout_height="50dp" />
 
                     <Button
+                        android:id="@+id/btn_db"
                         android:layout_width="64dp"
                         android:layout_height="50dp" />
 
                     <Button
+                        android:id="@+id/btn_chart"
                         android:layout_width="64dp"
                         android:layout_height="50dp" />
 
                     <Button
+                        android:id="@+id/btn_currency"
                         android:layout_width="64dp"
                         android:layout_height="50dp" />
 
                 </LinearLayout>
+
+                <FrameLayout
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/change_content"
+                    android:id="@+id/contentPanel"
+                    android:layout_width="255dp"
+                    android:layout_height="500dp" />
 
                 <LinearLayout
                     android:layout_width="110dp"

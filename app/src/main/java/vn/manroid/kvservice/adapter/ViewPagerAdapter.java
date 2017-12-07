@@ -13,8 +13,7 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
-import vn.manroid.kvservice.R;
-import vn.manroid.kvservice.view.fragment.ChartFragment;
+import vn.manroid.kvservice.view.fragment.chart.ChartFragment;
 import vn.manroid.kvservice.view.fragment.DetailsFragment;
 import vn.manroid.kvservice.view.fragment.NotiFragment;
 
