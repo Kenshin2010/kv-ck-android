@@ -50,7 +50,6 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
 
         grdContent = v.findViewById(R.id.grd_content);
         grdHisPre = v.findViewById(R.id.grd_pre_his);
-
         btnNews = (Button) v.findViewById(R.id.btn_news);
         btnChart = (Button) v.findViewById(R.id.btn_chart);
         btnDb = (Button) v.findViewById(R.id.btn_db);
@@ -60,7 +59,7 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         btnDb.setOnClickListener(this);
         btnCurrency.setOnClickListener(this);
         btnChart.setOnClickListener(this);
-        // Inflate the layout for this fragment
+
         return v;
     }
 
