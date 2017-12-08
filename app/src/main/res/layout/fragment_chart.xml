@@ -656,21 +656,19 @@
                     android:paddingTop="5dp">
 
                     <TextView
-                        android:layout_width="60dp"
+                        android:layout_width="65dp"
                         android:layout_height="80dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="1dp"
-                        android:background="#7f7f7f"
+                        android:layout_marginLeft="5dp"
+                        android:background="@drawable/custom_text_his_pre"
                         android:gravity="center"
                         android:singleLine="false"
                         android:text="@string/present"
                         android:textColor="#fff" />
 
                     <TextView
-                        android:layout_width="60dp"
+                        android:layout_width="65dp"
                         android:layout_height="80dp"
-                        android:layout_marginLeft="1dp"
-                        android:background="#7f7f7f"
+                        android:background="@drawable/custom_text_his_pre"
                         android:gravity="center"
                         android:singleLine="false"
                         android:text="@string/history"
@@ -764,7 +762,7 @@
                     android:layout_width="260dp"
                     android:layout_height="80dp"
                     android:layout_below="@id/details_kl_buy"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:numColumns="6" />
 
                 <LinearLayout
@@ -869,6 +867,7 @@
                         android:orientation="vertical">
 
                         <GridView
+                            android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
                             android:paddingLeft="5dp"
                             android:numColumns="3"
