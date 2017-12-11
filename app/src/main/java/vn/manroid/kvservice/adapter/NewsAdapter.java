@@ -22,7 +22,7 @@ import vn.manroid.kvservice.model.News;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
-    List<News> listNews;
+    private List<News> listNews;
 
     public NewsAdapter(List<News> listNews) {
         this.listNews = listNews;
@@ -41,7 +41,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public void onBindViewHolder(NewsViewHolder holder, int position) {
         News news= listNews.get(position);
         holder.txtNews.setText(news.getContent());
-
         holder.txtNews.setOnClickListener(onItemClick);
         holder.txtNews.setTag(news);
     }
@@ -51,7 +50,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                 @Override
                 public void onClick(View v) {
                     News app = (News) v.getTag();
-
                 }
             };
 
@@ -61,7 +59,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     }
 
     class NewsViewHolder extends RecyclerView.ViewHolder {
-
         TextView txtNews;
 
         public NewsViewHolder(View itemView) {

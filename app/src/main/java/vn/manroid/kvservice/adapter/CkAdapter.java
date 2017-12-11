@@ -42,14 +42,10 @@ public class CkAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
         CK ck = getItem(i);
-
         view = inflater.inflate(R.layout.item_content,null);
         TextView txtNumber = view.findViewById(R.id.txt_number);
-
         txtNumber.setText(ck.getNumber());
-
         return view;
     }
 }

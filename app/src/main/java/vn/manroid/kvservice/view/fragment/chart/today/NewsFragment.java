@@ -34,10 +34,8 @@ public class NewsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View v = inflater.inflate(R.layout.fragment_news, container, false);
         rcvNews = (RecyclerView) v.findViewById(R.id.rcv_news);
-
         return v;
     }
 
@@ -45,7 +43,7 @@ public class NewsFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         LinearLayoutManager manager =
                 new LinearLayoutManager(getContext(),
-                        LinearLayoutManager.VERTICAL,false);
+                        LinearLayoutManager.VERTICAL, false);
         rcvNews.setLayoutManager(manager);
         listNews = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
