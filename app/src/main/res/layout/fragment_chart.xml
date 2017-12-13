@@ -647,7 +647,7 @@
 
                 <LinearLayout
                     android:id="@+id/present_history"
-                    android:layout_width="160dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/ln_code"
                     android:layout_toRightOf="@+id/content_ma_ck"

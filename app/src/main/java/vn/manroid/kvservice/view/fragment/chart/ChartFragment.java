@@ -106,7 +106,7 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
             @Override
             public <T> void onResponse(T result) {
                 Logger.d(result.toString());
-//                String hkb =
+                splitData(result.toString());
             }
 
             @Override
@@ -145,6 +145,7 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         String[] strs = json.split("[,\\|]");
         for (int i = 0; i < strs.length; i++) {
             data.add(strs[i]);
+            Logger.d(data.get(i));
         }
     }
 
