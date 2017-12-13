@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,12 @@ import java.util.List;
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.adapter.CkAdapter;
 import vn.manroid.kvservice.model.CK;
+import vn.manroid.kvservice.model.reuslt.BaseResult;
+import vn.manroid.kvservice.model.reuslt.Data;
+import vn.manroid.kvservice.model.reuslt.IndexResult;
+import vn.manroid.kvservice.service.IOnRequestListener;
+import vn.manroid.kvservice.service.api.ApiManager;
+import vn.manroid.kvservice.service.util.Logger;
 import vn.manroid.kvservice.view.fragment.chart.today.ChartTodayFragment;
 import vn.manroid.kvservice.view.fragment.chart.today.CurrencyFragment;
 import vn.manroid.kvservice.view.fragment.chart.today.DbFragment;
@@ -68,6 +75,10 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         adapter = new CkAdapter(list, getLayoutInflater());
         grdContent.setAdapter(adapter);
         grdHisPre.setAdapter(adapter);
+
+        getIndex();
+        getMaCK();
+
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -88,6 +99,45 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
                 changeLayout(new CurrencyFragment());
                 break;
         }
+    }
+
+    private void getMaCK(){
+        ApiManager.getInstance().getMaCk(new IOnRequestListener() {
+            @Override
+            public <T> void onResponse(T result) {
+                Logger.d(result.toString());
+//                String hkb =
+            }
+
+            @Override
+            public void onError(int statusCode) {
+
+            }
+        });
+    }
+    
+    private void getIndex(){
+        ApiManager.getInstance().getAllIndex(BaseResult.class, new IOnRequestListener() {
+            @Override
+            public <T> void onResponse(T result) {
+                BaseResult response = BaseResult.class.cast(result);
+                IndexResult vnResult = response.getVn_Index();
+                IndexResult vn30Ruslt = response.getVn30_Index();
+                IndexResult hnxResult = response.getHnx_Index();
+                Data vn = vnResult.getData();
+                Data vn30 = vn30Ruslt.getData();
+                Data hnx = hnxResult.getData();
+                vn.getMarketIndex();
+                vn30.getMarketIndex();
+                hnx.getMarketIndex();
+                Logger.d(vn.getMarketIndex() + " ====== " + vn30.getMarketIndex() + " ====== " + hnx.getMarketIndex() + " ====== ");
+            }
+
+            @Override
+            public void onError(int statusCode) {
+
+            }
+        });
     }
 
     private void changeLayout(Fragment frag) {
