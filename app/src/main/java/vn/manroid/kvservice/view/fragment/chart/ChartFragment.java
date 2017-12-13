@@ -140,6 +140,14 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         });
     }
 
+    public static void splitData(String json) {
+        List<String> data = new ArrayList<String>();
+        String[] strs = json.split("[,\\|]");
+        for (int i = 0; i < strs.length; i++) {
+            data.add(strs[i]);
+        }
+    }
+
     private void changeLayout(Fragment frag) {
         FragmentManager manager = getActivity().getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
