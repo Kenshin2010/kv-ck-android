@@ -646,6 +646,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:gravity="center_horizontal"
                     android:id="@+id/present_history"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -656,7 +657,8 @@
                     android:paddingTop="5dp">
 
                     <TextView
-                        android:layout_width="65dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
                         android:layout_height="80dp"
                         android:layout_marginLeft="5dp"
                         android:background="@drawable/custom_text_his_pre"
@@ -666,7 +668,8 @@
                         android:textColor="#fff" />
 
                     <TextView
-                        android:layout_width="65dp"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
                         android:layout_height="80dp"
                         android:background="@drawable/custom_text_his_pre"
                         android:gravity="center"
