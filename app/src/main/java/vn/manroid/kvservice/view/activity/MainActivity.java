@@ -20,16 +20,20 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ViewPagerAdapter adapterWrapper;
-    private TabLayout tabLayout;
-    private ViewPager pager;
+    @BindView(R.id.tabs)
+    TabLayout tabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager pager;
 
+    private ViewPagerAdapter adapterWrapper;
 
     private int[] tabIcons = {
             R.mipmap.ic_launcher_round,
@@ -37,11 +41,11 @@ public class MainActivity extends AppCompatActivity
             R.mipmap.ic_launcher_round
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -51,8 +55,6 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
-        pager = (ViewPager) findViewById(R.id.view_pager);
         adapterWrapper = new ViewPagerAdapter(getApplicationContext(), getSupportFragmentManager());
         pager.setAdapter(adapterWrapper);
         tabLayout.setupWithViewPager(pager);

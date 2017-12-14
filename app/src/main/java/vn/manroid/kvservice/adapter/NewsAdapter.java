@@ -13,6 +13,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.model.News;
 
@@ -59,11 +61,12 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     }
 
     class NewsViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.txt_content)
         TextView txtNews;
 
-        public NewsViewHolder(View itemView) {
-            super(itemView);
-            txtNews = (TextView) itemView.findViewById(R.id.txt_content);
+        public NewsViewHolder(View view) {
+            super(view);
+            ButterKnife.bind(this, view);
         }
     }
 }

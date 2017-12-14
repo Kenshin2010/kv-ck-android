@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.adapter.NewsAdapter;
 import vn.manroid.kvservice.model.News;
@@ -22,7 +24,8 @@ import vn.manroid.kvservice.model.News;
  */
 public class NewsFragment extends Fragment {
 
-    private RecyclerView rcvNews;
+    @BindView(R.id.rcv_news)
+    RecyclerView rcvNews;
     private NewsAdapter adapter;
     private List<News> listNews;
 
@@ -35,7 +38,7 @@ public class NewsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_news, container, false);
-        rcvNews = (RecyclerView) v.findViewById(R.id.rcv_news);
+        ButterKnife.bind(this, v);
         return v;
     }
 

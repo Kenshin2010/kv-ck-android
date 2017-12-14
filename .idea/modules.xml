@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Aft-ChungKhoan-Android.iml" filepath="$PROJECT_DIR$/Aft-ChungKhoan-Android.iml" />
+      <module fileurl="file://C:\Users\manro\Desktop\CKKV\Aft-ChungKhoan-Android.iml" filepath="C:\Users\manro\Desktop\CKKV\Aft-ChungKhoan-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CKKV.iml" filepath="$PROJECT_DIR$/CKKV.iml" />
       <module fileurl="file://C:\Users\Thanh Vu\Desktop\Aft-ChungKhoan-Android\CKKV.iml" filepath="C:\Users\Thanh Vu\Desktop\Aft-ChungKhoan-Android\CKKV.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>

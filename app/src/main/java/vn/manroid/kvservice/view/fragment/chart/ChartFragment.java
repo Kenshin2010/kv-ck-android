@@ -20,6 +20,8 @@ import android.widget.GridView;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import vn.manroid.kvservice.R;
 import vn.manroid.kvservice.adapter.CkAdapter;
 import vn.manroid.kvservice.model.CK;
@@ -38,12 +40,25 @@ import vn.manroid.kvservice.view.fragment.chart.today.NewsFragment;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ChartFragment extends Fragment implements View.OnClickListener{
+public class ChartFragment extends Fragment implements View.OnClickListener {
 
-    private GridView grdContent, grdHisPre;
+    @BindView(R.id.grd_content)
+    GridView grdContent;
+    @BindView(R.id.grd_pre_his)
+    GridView grdHisPre;
+    @BindView(R.id.btn_news)
+    Button btnNews;
+    @BindView(R.id.btn_chart)
+    Button btnChart;
+    @BindView(R.id.btn_db)
+    Button btnDb;
+    @BindView(R.id.btn_currency)
+    Button btnCurrency;
+
     private List<CK> list;
     private CkAdapter adapter;
-    private Button btnNews,btnChart,btnDb,btnCurrency;
+//    private Button btnNews, btnChart, btnDb, btnCurrency;
+//    private GridView grdContent, grdHisPre;
 
     public ChartFragment() {
         // Required empty public constructor
@@ -53,12 +68,13 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_chart, container, false);
-        grdContent = v.findViewById(R.id.grd_content);
-        grdHisPre = v.findViewById(R.id.grd_pre_his);
-        btnNews = (Button) v.findViewById(R.id.btn_news);
-        btnChart = (Button) v.findViewById(R.id.btn_chart);
-        btnDb = (Button) v.findViewById(R.id.btn_db);
-        btnCurrency = (Button) v.findViewById(R.id.btn_currency);
+        ButterKnife.bind(this, v);
+        //    grdContent = v.findViewById(R.id.grd_content);
+        //    grdHisPre = v.findViewById(R.id.grd_pre_his);
+        //    btnNews = (Button) v.findViewById(R.id.btn_news);
+        //    btnChart = (Button) v.findViewById(R.id.btn_chart);
+        //    btnDb = (Button) v.findViewById(R.id.btn_db);
+        //    btnCurrency = (Button) v.findViewById(R.id.btn_currency);
         btnNews.setOnClickListener(this);
         btnDb.setOnClickListener(this);
         btnCurrency.setOnClickListener(this);
@@ -75,17 +91,15 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         adapter = new CkAdapter(list, getLayoutInflater());
         grdContent.setAdapter(adapter);
         grdHisPre.setAdapter(adapter);
-
         getIndex();
         getMaCK();
-
         super.onViewCreated(view, savedInstanceState);
     }
 
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        switch (id){
+        switch (id) {
             case R.id.btn_news:
                 changeLayout(new NewsFragment());
                 break;
@@ -101,7 +115,7 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
         }
     }
 
-    private void getMaCK(){
+    private void getMaCK() {
         ApiManager.getInstance().getMaCk(new IOnRequestListener() {
             @Override
             public <T> void onResponse(T result) {
@@ -115,8 +129,8 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
-    
-    private void getIndex(){
+
+    private void getIndex() {
         ApiManager.getInstance().getAllIndex(BaseResult.class, new IOnRequestListener() {
             @Override
             public <T> void onResponse(T result) {
@@ -127,9 +141,6 @@ public class ChartFragment extends Fragment implements View.OnClickListener{
                 Data vn = vnResult.getData();
                 Data vn30 = vn30Ruslt.getData();
                 Data hnx = hnxResult.getData();
-                vn.getMarketIndex();
-                vn30.getMarketIndex();
-                hnx.getMarketIndex();
                 Logger.d(vn.getMarketIndex() + " ====== " + vn30.getMarketIndex() + " ====== " + hnx.getMarketIndex() + " ====== ");
             }
 
